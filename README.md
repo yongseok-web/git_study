@@ -1,2 +1,2 @@
-# git_study
-test repo for github study
+# web_study
+test repo for web study
