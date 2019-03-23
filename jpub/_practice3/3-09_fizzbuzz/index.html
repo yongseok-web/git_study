@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>FizzBuzz</h1>
+<h2>30까지의 수로</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+연산자 정리
+
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script type="text/javascript">
+
+	for (var i = 1; i < 31; i++) {
+		if (i%15 === 0){
+			console.log("Fizz buzz");
+		}
+		else if (i % 3 === 0) {
+			console.log("Fizz");
+		}
+		else if(i % 5 === 0) {
+			console.log("Buzz");
+	}
+		else {
+			console.log(i)
+		};
+	}
+
+</script>
+</body>
+</html>
