@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>'0' add 자릿수 맞추기</h1>
+<h2>리스트에 번호 붙이기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<h2>Standards Revival MP3</h2>
+	<div id="list">
+
+	</div>
+<br>self
+<br>function nu(num){
+<br>	if (num<10) {
+<br>		return '0'+num;
+<br>	}
+<br>	else {
+<br>		return num;
+<br>	}
+<br>}
+<br>console.log(nu(5));
+
+</section>
+</div><!-- /.main-wrapper -->
+<script type="text/javascript">
+
+var addZero = function(num, digit){
+ var numString = String(num);
+ while(numString.length < digit){
+	 numString = '0' + numString;
+ }
+ return numString;
+}
+
+var songs = [
+	'stella ByStarlight',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'~~~~~~~~~',
+	'Fly Me To The Moon'
+]
+
+for (var i = 0; i < songs.length; i++) {
+var paragraph = document.createElement('p');
+	paragraph.textContent = addZero(i + 1, 2) + '. ' + songs[i];
+	document.getElementById('list').appendChild(paragraph);
+}
+</script>
+<footer>JavaScript Samples</footer>
+</body>
+</html>

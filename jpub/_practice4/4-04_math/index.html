@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>소수점 버리기</h1>
+<h2>사칙연산 이외의 계산 필요</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	Math 를 활용한다.
+	<p>
+		원주율은 <span><script>document.write(Math.PI);</script></span>
+		이다.
+	</p>
+	<p>
+		그냥버리면
+		<span><script>document.write(Math.floor(Math.PI));</script></span>
+		이 된다.
+	</p>
+	<p id="output">
+
+	</p>
+</section>
+</div><!-- /.main-wrapper -->
+<script type="text/javascript">
+
+var poin = function(num, digit){
+	var number = num*Math.pow(10, digit);
+	return Math.floor(number)/Math.pow(10, digit);
+}
+console.log(poin(Math.PI, 2));
+	document.getElementById('output').textContent = poin(Math.PI, 2);
+</script>
+<footer>JavaScript Samples</footer>
+</body>
+</html>
