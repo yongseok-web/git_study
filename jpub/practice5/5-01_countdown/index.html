@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>카운트다운 타이머</h1>
+<h2>남은 시간을 계산하는 함수</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<ol>
+		<li>설정한 미래 시간을 매개변수로 받는다</li>
+		<li>목표 시간에서 현재 시간을 뺀다</li>
+		<li>계산 결과를 반환한다</li>
+	</ol>
+Math.
+	<p id="time">
+
+	</p>
+</section>
+</div><!-- /.main-wrapper -->
+<script type="text/javascript">
+
+var countdown = function(due){
+	var now = new Date();
+
+	var rest = due.getTime() - now.getTime();
+	var sec = Math.floor(rest / 1000 % 60);
+	var min = Math.floor(rest / 1000 / 60) % 60;
+	var hours = Math.floor(rest / 1000 / 60 / 60) % 24;
+	var days = Math.floor(rest /1000 / 60 / 60 / 24);
+	var count = [days, hours, min, sec];
+
+return count;
+}
+
+var goal = new Date(2020, 06, 24); //위와 같이 축약해서 작성 가능하다.
+
+// var goal = new Date();
+// goal.setFullYear(2020);
+// goal.setMonth(6); //M-1 대입해야함;;
+// goal.setDate(24);
+// goal.setHours(00);
+// goal.setMinutes(00);
+// goal.setSeconds(00);
+
+console.log(countdown(goal));
+
+var recalc = function(){
+var counter = countdown(goal);
+
+var output = '남은 시간 '+ counter[0] + '일 ' + counter[1] + '시간 ' + counter[2] + '분 ' + counter[3] +'초';
+document.getElementById('time').textContent = output;
+refresh();
+}
+var refresh = function(){
+	setTimeout(recalc, 1000);
+}
+refresh();
+
+/* 남은 시간 표기
+var countdown = function(due){
+	var now = new Date();
+
+	var rest = due.getTime() - now.getTime();
+	var sec = Math.floor(rest / 1000 % 60);
+	var min = Math.floor(rest / 1000 / 60) % 60;
+	var hours = Math.floor(rest / 1000 / 60 / 60) % 24;
+	var days = Math.floor(rest /1000 / 60 / 60 / 24);
+	var count = [days, hours, min, sec];
+
+return count;
+}
+
+var goal = new Date();
+goal.setHours(23);
+goal.setMinutes(59);
+goal.setSeconds(59);
+
+console.log(countdown(goal));
+
+var recalc = function(){
+var counter = countdown(goal);
+
+var output = '지금부터 ' + counter[1] + '시간 ' + counter[2] + '분 ' + counter[3] +'초 이후에 주문하면 50% 할인!';
+document.getElementById('time').textContent = output;
+refresh();
+}
+var refresh = function(){
+	setTimeout(recalc, 1000);
+}
+refresh();
+*/
+
+</script>
+<footer>JavaScript Samples</footer>
+</body>
+</html>
