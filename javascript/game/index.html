@@ -71,6 +71,7 @@
     </table>
   </div>
 
+
   <script type="text/javascript">
     var field =[
       document.getElementById('field_1'),
@@ -99,19 +100,33 @@
     var f_c = [0,0,0,0,0,0,0,0];
     var coun = 0;
 
-    var z = (Math.floor(Math.random() * (8)) + 0);
-    var go = [1,2,3,4,5,6,7,0];
+var z1;
+var z2;
+var z3;
+var z4;
+var z5;
+var z6;
+var z7;
+var z8;
+  // while ((1+z1)+(1+z2)+(1+z3)*(1+z4)*(1+z5)*(1+z6)*(1+z7)*(1+z8)!=40320&&(z1)+(z2)*(z3)*(z4)*(z5)*(z6)*(z7)*(z8)!=25) {
+    while (Math.pow(10, z1)+Math.pow(10, z2)+Math.pow(10, z3)+Math.pow(10, z4)+Math.pow(10, z5)+Math.pow(10, z6)+Math.pow(10, z7)+Math.pow(10, z8)!=11111111) {
 
-    if(z === 0)   {go =[0,4,6,2,7,5,3,1];}
-    else if(z===1){go =[0,2,6,7,5,3,1,4];}
-    else if(z===2){go =[2,6,7,5,3,1,0,4];}
-    else if(z===3){go =[2,7,5,3,1,6,0,4];}
-    else if(z===4){go =[4,5,3,1,0,6,2,7];}
-    else if(z===5){go =[4,3,1,6,2,0,7,5];}
-    else if(z===6){go =[6,1,0,4,2,7,5,3];}
-    else if(z===7){go =[6,0,2,4,7,5,3,1];}
+var z1 = (Math.floor(Math.random() * (8)) + 0);
+    var z2 = (Math.floor(Math.random() * (8)) + 0);
+    var z3 = (Math.floor(Math.random() * (8)) + 0);
+    var z4 = (Math.floor(Math.random() * (8)) + 0);
+    var z5 = (Math.floor(Math.random() * (8)) + 0);
+    var z6 = (Math.floor(Math.random() * (8)) + 0);
+    var z7 = (Math.floor(Math.random() * (8)) + 0);
+    var z8 = (Math.floor(Math.random() * (8)) + 0);
+
+    }
+
+    var go = [z1,z2,z3,z4,z5,z6,z7,z8];
+
 
     window.onload = function () {
+      console.log(go);
 
       card[a].src = 'img1.png';
       card[b].src = 'img1.png';
@@ -132,6 +147,41 @@ var e = go[4];
 var f = go[5];
 var g = go[6];
 var h = go[7];
+
+// var z = (Math.floor(Math.random() * (8)) + 0);
+// var go = [1,2,3,4,5,6,7,0];
+//
+// if(z === 0)   {go =[0,4,6,2,7,5,3,1];}
+// else if(z===1){go =[0,2,6,7,5,3,1,4];}
+// else if(z===2){go =[2,6,7,5,3,1,0,4];}
+// else if(z===3){go =[2,7,5,3,1,6,0,4];}
+// else if(z===4){go =[4,5,3,1,0,6,2,7];}
+// else if(z===5){go =[4,3,1,6,2,0,7,5];}
+// else if(z===6){go =[6,1,0,4,2,7,5,3];}
+// else if(z===7){go =[6,0,2,4,7,5,3,1];}
+//
+// window.onload = function () {
+//
+//   card[a].src = 'img1.png';
+//   card[b].src = 'img1.png';
+//   card[c].src = 'img2.png';
+//   card[d].src = 'img2.png';
+//   card[e].src = 'img3.png';
+//   card[f].src = 'img3.png';
+//   card[g].src = 'img0.png';
+//   card[h].src = 'img0.png';
+//   console.log(kim);
+//
+// }
+//
+// var a = go[0];
+// var b = go[1];
+// var c = go[2];
+// var d = go[3];
+// var e = go[4];
+// var f = go[5];
+// var g = go[6];
+// var h = go[7];
 
 
 
@@ -217,7 +267,11 @@ var one = function(num){
                   f_c[num]=0;
                   }
 console.log(f_c);
-if(f_c[0]*f_c[1]*f_c[2]*f_c[3]*f_c[4]*f_c[5]*f_c[6]*f_c[7]===6561){window.alert('축하합니다'+coun+'회 달성');}
+if(f_c[0]*f_c[1]*f_c[2]*f_c[3]*f_c[4]*f_c[5]*f_c[6]*f_c[7]===6561){
+  if(window.confirm('축하합니다'+coun+'회 달성')){
+    location.href = location.href;
+  }
+  ;}
 
 }
 var fone = function(){
