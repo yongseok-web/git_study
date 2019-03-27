@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -139,7 +139,7 @@ var z1 = (Math.floor(Math.random() * (8)) + 0);
 
 
     window.onload = function () {
-      console.log(go);
+      // console.log(go);
 
       card[a].src = 'img1.png';
       card[b].src = 'img1.png';
@@ -238,20 +238,24 @@ field[7].onclick = function(){over(7);}
 
 
 var over = function(mun){
-      field[mun].style.opacity = '0';
-      f_c[mun]+=1;
+      if(f_c[mun] === 3){
+        window.confirm('이미 맞췄습니다!');}
+        else {
+          field[mun].style.opacity = '0';
+          f_c[mun]+=1;
 
-      if(count%2 === 0){
-        count += 1;
-        }
-      else {
-        coun = coun + 1;
-        count += 1;
-        one(mun);
-        fone();
-        }
-        console.log(f_c);
+          if(count%2 === 0){
+            count += 1;
+            }
 
+          else {
+            coun = coun + 1;
+            count += 1;
+            one(mun);
+            fone();
+            }
+            // console.log(f_c);
+}
 }
 
 var one = function(num){
@@ -279,12 +283,15 @@ var one = function(num){
                   count=0;
                   f_c[num]=0;
                   }
-console.log(f_c);
-if(f_c[0]*f_c[1]*f_c[2]*f_c[3]*f_c[4]*f_c[5]*f_c[6]*f_c[7]===6561){
-  if(window.confirm('축하합니다'+coun+'회 달성')){
-    location.href = location.href;
-  }
-  ;}
+// console.log(f_c);
+if(f_c[0]*f_c[1]*f_c[2]*f_c[3]*f_c[4]*f_c[5]*f_c[6]*f_c[7]>=6561){
+  if(setTimeout(function() {window.confirm('축하합니다'+coun+'회 달성',300)})
+)
+{
+  location.href = location.href;
+}
+
+;}
 
 }
 var fone = function(){
