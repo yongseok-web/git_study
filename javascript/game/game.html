@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    #back{
+      width: 100%;
+      position: relative;
+      display: inline-block;
+
+    }
+    table{
+      display: inline-block;
+      float: left;
+      width: 80%;
+      margin: auto;
+      position: absolute;
+      transform: translate(-113%,18%);
+    }
+    td{
+      width: 16%;
+      text-align: center;
+      position: relative;
+    }
+    img{
+      width: 100%;
+      display: inline-block;
+
+    }
+    tr{
+      margin-bottom: 1%;
+    }
+    .card_back{
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+        #back_img{
+      width: 100%;
+      background-size: 100%;
+      position: relative;
+      magin-bottom: 1%;
+    }
+  </style>
+</head>
+<body>
+  <div id="back">
+    <img id="back_img" src="back2.jpeg">
+    <table>
+      <tr>
+        <td><img id="card_1" src="img1.png" alt="">
+          <sapn><img id="field_1" class="card_back" src="back.jpeg"></span>
+        </td>
+        <td><img id="card_2" src="img2.png" alt="">
+          <sapn><img id="field_2" class="card_back" src="back.jpeg"></span>
+        </td>
+        <td><img id="card_3" src="img3.png" alt="">
+          <sapn><img id="field_3" class="card_back" src="back.jpeg"></span>
+        </td>
+        <td><img id="card_4" src="img0.png" alt="">
+          <sapn><img id="field_4" class="card_back" src="back.jpeg"></span>
+        </td>
+      </tr>
+      <tr>
+        <td><img id="card_5" src="img1.png" alt="">
+          <sapn><img id="field_5" class="card_back" src="back.jpeg"></span>
+        </td>
+        <td><img id="card_6" src="img2.png" alt="">
+          <sapn><img id="field_6" class="card_back" src="back.jpeg"></span>
+        </td>
+        <td><img id="card_7" src="img3.png" alt="">
+          <sapn><img id="field_7" class="card_back" src="back.jpeg"></span>
+        </td>
+        <td><img id="card_8" src="img0.png" alt="">
+          <sapn><img id="field_8" class="card_back" src="back.jpeg"></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <script type="text/javascript">
+    var field =[
+      document.getElementById('field_1'),
+      document.getElementById('field_2'),
+      document.getElementById('field_3'),
+      document.getElementById('field_4'),
+      document.getElementById('field_5'),
+      document.getElementById('field_6'),
+      document.getElementById('field_7'),
+      document.getElementById('field_8')
+    ];
+    var card= [
+      document.getElementById('card_1'),
+      document.getElementById('card_2'),
+      document.getElementById('card_3'),
+      document.getElementById('card_4'),
+      document.getElementById('card_5'),
+      document.getElementById('card_6'),
+      document.getElementById('card_7'),
+      document.getElementById('card_8')
+    ];
+
+    var card_back = document.getElementsByClassName("card_back");
+
+    var count = 0;
+    var f_c = [0,0,0,0,0,0,0,0];
+    var coun = 0;
+
+var z1;
+var z2;
+var z3;
+var z4;
+var z5;
+var z6;
+var z7;
+var z8;
+  // while ((1+z1)+(1+z2)+(1+z3)*(1+z4)*(1+z5)*(1+z6)*(1+z7)*(1+z8)!=40320&&(z1)+(z2)*(z3)*(z4)*(z5)*(z6)*(z7)*(z8)!=25) {
+    while (Math.pow(10, z1)+Math.pow(10, z2)+Math.pow(10, z3)+Math.pow(10, z4)+Math.pow(10, z5)+Math.pow(10, z6)+Math.pow(10, z7)+Math.pow(10, z8)!=11111111) {
+
+var z1 = (Math.floor(Math.random() * (8)) + 0);
+    var z2 = (Math.floor(Math.random() * (8)) + 0);
+    var z3 = (Math.floor(Math.random() * (8)) + 0);
+    var z4 = (Math.floor(Math.random() * (8)) + 0);
+    var z5 = (Math.floor(Math.random() * (8)) + 0);
+    var z6 = (Math.floor(Math.random() * (8)) + 0);
+    var z7 = (Math.floor(Math.random() * (8)) + 0);
+    var z8 = (Math.floor(Math.random() * (8)) + 0);
+
+    }
+
+    var go = [z1,z2,z3,z4,z5,z6,z7,z8];
+
+
+    window.onload = function () {
+      console.log(go);
+
+      card[a].src = 'img1.png';
+      card[b].src = 'img1.png';
+      card[c].src = 'img2.png';
+      card[d].src = 'img2.png';
+      card[e].src = 'img3.png';
+      card[f].src = 'img3.png';
+      card[g].src = 'img0.png';
+      card[h].src = 'img0.png';
+
+}
+
+var a = go[0];
+var b = go[1];
+var c = go[2];
+var d = go[3];
+var e = go[4];
+var f = go[5];
+var g = go[6];
+var h = go[7];
+
+// var z = (Math.floor(Math.random() * (8)) + 0);
+// var go = [1,2,3,4,5,6,7,0];
+//
+// if(z === 0)   {go =[0,4,6,2,7,5,3,1];}
+// else if(z===1){go =[0,2,6,7,5,3,1,4];}
+// else if(z===2){go =[2,6,7,5,3,1,0,4];}
+// else if(z===3){go =[2,7,5,3,1,6,0,4];}
+// else if(z===4){go =[4,5,3,1,0,6,2,7];}
+// else if(z===5){go =[4,3,1,6,2,0,7,5];}
+// else if(z===6){go =[6,1,0,4,2,7,5,3];}
+// else if(z===7){go =[6,0,2,4,7,5,3,1];}
+//
+// window.onload = function () {
+//
+//   card[a].src = 'img1.png';
+//   card[b].src = 'img1.png';
+//   card[c].src = 'img2.png';
+//   card[d].src = 'img2.png';
+//   card[e].src = 'img3.png';
+//   card[f].src = 'img3.png';
+//   card[g].src = 'img0.png';
+//   card[h].src = 'img0.png';
+//   console.log(kim);
+//
+// }
+//
+// var a = go[0];
+// var b = go[1];
+// var c = go[2];
+// var d = go[3];
+// var e = go[4];
+// var f = go[5];
+// var g = go[6];
+// var h = go[7];
+
+
+
+
+// field[0].onclick = function(){
+//       if(count%2 === 0){
+//         count = count + 1;
+//         f_c[0]+=1;
+//         field[0].style.opacity = '0';}
+//       else {
+//         field[0].style.opacity = '0';
+//         count = count + 1;
+//         f_c[0]+=1;
+//         one(0);
+//         fone();}
+//       }
+//
+// field[1].onclick = function(){
+//       if(count%2 === 0){
+//         count = count + 1;
+//         f_c[1]+=1;
+//         field[1].style.opacity = '0';}
+//       else {
+//         field[1].style.opacity = '0';
+//         count = count + 1;
+//         f_c[1]+=1;
+//         one(1);
+//         fone();}
+//       }
+
+
+
+field[0].onclick = function(){over(0);}
+field[1].onclick = function(){over(1);}
+field[2].onclick = function(){over(2);}
+field[3].onclick = function(){over(3);}
+field[4].onclick = function(){over(4);}
+field[5].onclick = function(){over(5);}
+field[6].onclick = function(){over(6);}
+field[7].onclick = function(){over(7);}
+
+
+var over = function(mun){
+      field[mun].style.opacity = '0';
+      f_c[mun]+=1;
+
+      if(count%2 === 0){
+        count += 1;
+        }
+      else {
+        coun = coun + 1;
+        count += 1;
+        one(mun);
+        fone();
+        }
+        console.log(f_c);
+
+}
+
+var one = function(num){
+                  if (2===1) {
+                  }
+
+                  else if (f_c[a]*f_c[b]===1) {
+                    f_c[a]+=2;
+                    f_c[b]+=2;
+                  }
+                  else if (f_c[c]*f_c[d]===1) {
+                    f_c[c]+=2;
+                    f_c[d]+=2;
+                  }
+                  else if (f_c[e]*f_c[f]===1) {
+                    f_c[e]+=2;
+                    f_c[f]+=2;
+                  }
+                  else if (f_c[g]*f_c[h]===1) {
+                    f_c[g]+=2;
+                    f_c[h]+=2;
+                  }
+                  else if (count%2 === 0) {
+                  setTimeout(function() {card_back[num].style.opacity = '1'}, 300);
+                  count=0;
+                  f_c[num]=0;
+                  }
+console.log(f_c);
+if(f_c[0]*f_c[1]*f_c[2]*f_c[3]*f_c[4]*f_c[5]*f_c[6]*f_c[7]===6561){
+  if(window.confirm('축하합니다'+coun+'회 달성')){
+    location.href = location.href;
+  }
+  ;}
+
+}
+var fone = function(){
+                  if (f_c[0] === 1) {
+                  setTimeout(function() {card_back[0].style.opacity = '1'}, 300);
+                  f_c[0]=0;}
+                  else if (f_c[1] === 1) {
+                  setTimeout(function() {card_back[1].style.opacity = '1'}, 300);
+                  f_c[1]=0;}
+                  else if (f_c[2] === 1) {
+                  setTimeout(function() {card_back[2].style.opacity = '1'}, 300);
+                  f_c[2]=0;}
+                  else if (f_c[3] === 1) {
+                  setTimeout(function() {card_back[3].style.opacity = '1'}, 300);
+                  f_c[3]=0;}
+                  else if (f_c[4] === 1) {
+                  setTimeout(function() {card_back[4].style.opacity = '1'}, 300);
+                  f_c[4]=0;}
+                  else if (f_c[5] === 1) {
+                  setTimeout(function() {card_back[5].style.opacity = '1'}, 300);
+                  f_c[5]=0;}
+                  else if (f_c[6] === 1) {
+                  setTimeout(function() {card_back[6].style.opacity = '1'}, 300);
+                  f_c[6]=0;}
+                  else if (f_c[7] === 1) {
+                  setTimeout(function() {card_back[7].style.opacity = '1'}, 300);
+                  f_c[7]=0;}
+                  else{}
+                  count=0;
+}
+
+
+  </script>
+</body>
+</html>
