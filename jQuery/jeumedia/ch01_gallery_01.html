@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>thumbnail photo gallery</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    header {}
+
+    nav {}
+
+    section {}
+
+    section header {}
+
+    section article {
+      background-color: black;
+      text-align: center;
+    }
+    #imgSmall{
+      display: inline-block;
+    }
+    .imgSmall{
+      width: 15vw;
+      height: 15vw;
+      border: 1px solid white;
+      margin: 3px;
+      /* float: left; */
+    }
+    .imgBig{
+      width: 70vw;
+      height: 46vw;
+      display: inline-block;
+      border: 1px solid white;
+
+    }
+    article img {
+      width: 100%;
+      height: 100%;
+    }
+    section footer {}
+
+    aside {}
+
+    footer {}
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+  </header>
+  <nav>
+
+  </nav>
+  <section>
+    <header>
+
+    </header>
+    <article class="">
+      <div id=imgSmall>
+        <div class="imgSmall"><img src="https://cdn.pixabay.com/photo/2018/01/31/09/57/coffee-3120750_960_720.jpg" alt=""></div>
+        <div class="imgSmall"><img src="https://cdn.pixabay.com/photo/2019/03/31/11/05/toy-4092868_960_720.jpg" alt=""></div>
+        <div class="imgSmall"><img src="https://cdn.pixabay.com/photo/2016/11/23/00/37/art-1851483_960_720.jpg" alt=""></div>
+      </div>
+      <div class="imgBig"><img src="https://cdn.pixabay.com/photo/2018/01/31/09/57/coffee-3120750_960_720.jpg" alt=""></div>
+    </article>
+    <footer>
+*이미지 출처: https://pixabay.com
+    </footer>
+  </section>
+  <aside class="">
+
+  </aside>
+  <footer>
+    <br>2019.04.06.실습/
+    <br>self: .html(htmlString)<br>
+    <textarea name="name" rows="8" cols="80">
+      $('#imgSmall div').click(function(){
+        var htmlString = $(this).html();
+        $('.imgBig').html(htmlString);
+        $('.imgBig').css("opacity","0").stop().animate({opacity:1},1000);
+      });
+    </textarea>
+    <br>book:
+    <br>  a tag
+    <br>  .attr(attrbuteName, value)
+    <Br>  css 요소 추가: 천천히 나타나기
+  </footer>
+<script type="text/javascript">
+$('#imgSmall div').click(function(){
+  var htmlString = $(this).html();
+  $('.imgBig').html(htmlString);
+  $('.imgBig').css("opacity","0").stop().animate({opacity:1},1000);
+});
+</script>
+</body>
+
+</html>
