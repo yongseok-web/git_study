@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>레이아웃2</title>
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  #wrap{
+    width: 100%;
+    margin: auto;
+    background-color: black;
+  }
+  header{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(69, 140, 20);
+  }
+  nav{
+    width: 20%;
+    height: 80vh;
+    background-color: rgb(155, 218, 111);
+    float: left;
+  }
+  section {
+    width: 60%;
+    height: 80vh;
+    background-color: rgb(80, 185, 7);
+    float: left;
+  }
+  aside {
+    width: 20%;
+    height: 80vh;
+    background-color: rgb(109, 195, 49);
+    float: left;
+  }
+  footer {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(61, 149, 0);
+    clear: both;
+  }
+@media (max-width:1220px) {
+  header{
+    height: 200px;
+  }
+  nav{
+    width: 40%;
+    height: 600px;
+    float: left;
+  }
+  section {
+    width: 60%;
+    height: 600px;
+    float: left;
+  }
+  aside {
+    width: 100%;
+    height: 200px;
+    float: none;
+    clear: both;
+  }
+  footer {
+    height: 100px;
+  }
+}
+@media (max-width:768px) {
+  header{
+    height: 300px;
+  }
+  nav{
+    display: none;
+  }
+  section {
+    width: 100%;
+    height: 400px;
+    float: none;
+  }
+  aside {
+    height: 300px;
+  }
+  footer {
+    height: 150px;
+  }
+}
+@media (max-width:560px) {
+  header{
+    height: 350px;
+  }
+  section {
+    height: 300px;
+  }
+  aside {
+    height: 400px;
+  }
+  footer {
+    height: 200px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+<div id="wrap">
+  <header>
+
+  </header>
+  <nav>
+
+  </nav>
+  <section>
+
+  </section>
+  <aside class="">
+
+  </aside>
+  <footer></footer>
+</div>
+</body>
+
+</html>

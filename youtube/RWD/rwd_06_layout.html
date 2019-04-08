@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>레이아웃4</title>
+  <style media="screen">
+  *{margin: 0;padding:0; text-align: center;}
+    #wrap{
+      margin: auto;
+      width: 1200px;
+    }
+    header{
+      width: 100%;
+      height: 50px;
+      background-color: rgb(221, 177, 101)
+    }
+    aside{
+      width: 100%;
+      height: 350px;
+      background-color: rgb(217, 158, 57)
+    }
+    section{
+      width: 100%;
+      height: 450px;
+      background-color: rgb(187, 132, 37)
+    }
+    #sec-art{
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+    article{
+      float: left;
+      margin: .5%;
+      width: 19%;
+      height: 170px;
+      background-color: rgb(245, 110, 0);
+      border-radius: 5%;
+    }
+    footer{
+      width: 100%;
+      height: 50px;
+      background-color: rgb(204, 122, 0);
+    }
+@media (max-width:1220px) {
+  #wrap{
+    width: 100%;
+  }
+  article{
+    margin: .5%;
+    width: 24%;}
+  .art9{display: none;}
+  .art10{display: none;}
+}
+@media (max-width:768px) {
+  section{
+    height: 650px;
+  }
+
+  article{
+    margin: .5%;
+    width: 32%;}
+  .art9{display: inline-block;}
+  .art10{display: none;}
+}
+@media (max-width:560px) {
+  section{
+    height: 1050px;
+  }
+
+  article{
+    margin: .5%;
+    width: 49%;}
+  .art10{display: inline-block;}
+}
+  </style>
+</head>
+<body>
+  <div id="wrap">
+
+<header>
+header
+</header>
+<aside>
+  aside
+</aside>
+<section>
+  <div id="sec-art">
+
+  <article class="article art1"> 1 </article>
+  <article class="article art2"> 2 </article>
+  <article class="article art3"> 3 </article>
+  <article class="article art4"> 4 </article>
+  <article class="article art5"> 5 </article>
+  <article class="article art6"> 6 </article>
+  <article class="article art7"> 7 </article>
+  <article class="article art8"> 8 </article>
+  <article class="article art9"> 9 </article>
+  <article class="article art10"> 10 </article>
+</div>
+</section>
+<footer>footer</footer>
+
+</div>
+</body>
+</html>

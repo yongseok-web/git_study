@@ -84,8 +84,8 @@
 
     </header>
     <article class="">
-      <div id=img>
-        <div class="img" style="display:none;">
+      <div id="fadeShow">
+        <div class="active" style="display:none;">
           <img src="https://cdn.pixabay.com/photo/2018/01/31/09/57/coffee-3120750_960_720.jpg" alt="">
         </div>
         <div class="img" style="display:none;">
@@ -104,18 +104,10 @@
 
   </aside>
   <footer>
-    <br>2019.04.07.실습/
+    <br>2019.04.08.실습/
     <br>self: .html(htmlString)<br>
     <textarea name="name" rows="8" cols="80">
-      $('#imgSmall div').click(function() {
-        var htmlString = $(this).html();
-        $('.imgBig').html(htmlString);
-        $('.imgBig').css("opacity", "0").stop().animate({
-          opacity: 1
-        }, 1000);
-        $('.imgBig').append('<div id="subs"></div>');
-        $('#subs').html($('.imgBig em'));
-      });
+
     </textarea>
     <br>book:
     <br> append()
