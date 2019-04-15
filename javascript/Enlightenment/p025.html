@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>문자열, 숫자, 불리언 원시값을 객체처럼 사용하면 객체처럼 동작한다.</title>
+</head>
+<body>
+  <script>
+    var myNull = null;
+    var myUndefined = undefined;
+    var primitiveString1="foo";
+    var primitiveString2= String('foo');
+    var primitiveNumber1 = 10;
+    var primitiveNumber2 = Number('10');
+    var primitiveBoolean1 = true;
+    var primitiveBoolean2 = Boolean('true');
+
+
+    console.log(primitiveString1.toString(),primitiveString2.toString());
+    console.log(primitiveNumber1.toString(),primitiveNumber2.toString());
+    console.log(primitiveBoolean1.toString(),primitiveBoolean2.toString());
+
+    console.log(myNull.toString());
+    console.log(myUndefined.toString());
+  </script>
+  원시값을 객체로 바꾸어 코드를 실행함.
+</body>
+</html>

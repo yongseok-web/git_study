@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>리터럴을 사용한 값 생성하기</title>
+</head>
+<body>
+  <script>
+    var myNumber = new Number(23);
+    var myNumberLiteral = 23;
+
+    var myString = new String('남성');
+    var myStringLiteral = '남성';
+
+    var myBoolean = new Boolean(false);
+    var myBooleanLiteral = new Boolean(false);
+
+    var myObject = new Object();
+    var myObjectLiteral = {};
+
+    var myArray = new Array('foo','bar');
+    var myArrayLiteral = ['foo','bar'];
+
+    var myFunction = new Function("x","y","return x*y");
+    var myFunctionLiteral = function(x,y){"return x*y"};
+
+    var myRegExp = new RegExp('\bt[a-z]+\b');
+    var myRegExpLiteral = /\bt[a-z]+\b/;
+
+    console.log(myNumber.constructor,myNumberLiteral.constructor);
+    console.log(myString.constructor,myStringLiteral.constructor);
+    console.log(myBoolean.constructor,myBooleanLiteral.constructor);
+    console.log(myObject.constructor,myObjectLiteral.constructor);
+    console.log(myArray.constructor,myArrayLiteral.constructor);
+    console.log(myFunction.constructor,myFunctionLiteral.constructor);
+    console.log(myRegExp.constructor,myRegExpLiteral.constructor);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>복합객체는 어떻게 저장·복사 되는가</title>
+</head>
+<body>
+  <script>
+    var myObject={};
+    var myObjectCopy=myObject;
+    console.log(myObject,myObjectCopy);
+
+    myObject.foo='foo';
+
+    console.log(myObject,myObjectCopy);
+  </script>
+  참조의 형태로 저장되고 관리 된다.
+</body>
+</html>

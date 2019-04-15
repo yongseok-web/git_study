@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>생성자를 통해 만든 인스턴스에 인스턴스 속성 추가하기(2)</title>
+</head>
+<body>
+  <script>
+
+  var myNumber = new Number(23);
+
+  var myString = new String('남성');
+
+  var myBoolean = new Boolean(true);
+
+  var myObject = new Object();
+
+  var myArray = new Array('foo','bar');
+
+  var myFunction = new Function("x","y","return x*y");
+
+  var myRegExp = new RegExp('\bt[a-z]+\b');
+
+myNumber.prop ='test';
+myString.prop ='test';
+myBoolean.prop ='test';
+myObject.propr ='test';
+myArray.prop ='test';
+myFunction.prop ='test';
+myRegExp.prop ='test';
+
+console.log(
+  myNumber.prop,
+  myString.prop,
+  myBoolean.prop,
+  myObject.propr,
+  myArray.prop,
+  myFunction.prop,
+  myRegExp.prop
+);
+
+console.log(myNumber,myString,myBoolean);
+var myNumber = 23;
+
+var myString = '남성';
+
+var myBoolean = false;
+
+myNumber.prop ='test';
+myString.prop ='test';
+myBoolean.prop ='test';
+console.log(
+  myNumber.prop,
+  myString.prop,
+  myBoolean.prop);
+  console.log(myNumber,myString,myBoolean);
+
+  </script>
+</body>
+</html>

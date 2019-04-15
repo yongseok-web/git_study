@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>복합객체는 참조를 비교한다</title>
+</head>
+<body>
+  <script>
+    var objectFoo={same: 'same'};
+    var objectBar={same: 'same'};
+
+    console.log(objectFoo===objectBar);
+    console.log(objectFoo==objectBar);
+    console.log(objectFoo);
+    console.log(objectBar);
+    console.log(objectFoo.same==objectBar.same);
+
+    var objectA={same: 'same'};
+    var objectB=objectA;
+    console.log(objectA===objectB);
+
+  </script>
+  두개의 독립적인 복합객체는 자료형이나 속성이 똑같더라도 서로 다르다고 판단한다.
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>동적 속성 덕분에 객체 수정이 가능하다</title>
+</head>
+<body>
+  <script>
+
+    String.augmentedProperties=[];
+
+    if (!String.prototype.trimIT) {
+      String.prototype.trimIT =function() {
+        return this.replace(/^\s+|\s+$/g, '');
+      }
+      String.augmentedProperties.push('trimIT')
+    }
+    var myString = 'trim me';
+    console.log(myString.trimIT());
+    console.log(String.augmentedProperties.join());
+  </script>
+  네이티브 생성자에 속성을 저장할 수도 있으며, 네이티브 생성자의 프로토타입 객체에 메소드를 추가하면 해당하는 네이티브 객체에도 반영이 될 수 있다.
+</body>
+</html>

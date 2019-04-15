@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>생성자 인스턴스에는 자신의 생성자 함수를 가리키는 속성이 있다(2)</title>
+</head>
+<body>
+  <script>
+  var myNumber = new Number(23);
+  var myNumberL = 23;
+  var myString = new String('남성');
+  var myStringL = '남성';
+  var myBoolean = new Boolean(false);
+  var myBooleanL = new Boolean(false);
+  var myObject = new Object();
+  var myObjectL = {};
+  var myArray = new Array('foo','bar');
+  var myArrayL = ['foo','bar'];
+  var myFunction = new Function("x","y","return x*y");
+  var myFunctionL = function(x,y){"return x*y"};
+  var myRegExp = new RegExp('\bt[a-z]+\b');
+  var myRegExpL = /\bt[a-z]+\b/;
+  var myError = new Error();
+
+console.log(
+myNumber.constructor ===Number,
+myNumberL.constructor ===Number,
+myString.constructor ===String,
+myStringL.constructor ===String,
+myBoolean.constructor ===Boolean,
+myBooleanL.constructor ===Boolean,
+myObject.constructor ===Object,
+myObjectL.constructor ===Object,
+myArray.constructor ===Array,
+myArrayL.constructor ===Array,
+myFunction.constructor ===Function,
+myFunctionL.constructor ===Function,
+myRegExp.constructor ===RegExp,
+myRegExpL.constructor ===RegExp,
+myError.constructor ===Error
+
+);
+
+  </script>
+</body>
+</html>

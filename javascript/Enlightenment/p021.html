@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>원시값 null, undefined, 'string', 10, true, false는 객체가 아니다</title>
+</head>
+<body>
+  <script>
+    var primitiveString1="foo";
+    var primitiveString2= String('foo');
+    var primitiveNumber1 = 10;
+    var primitiveNumber2 = Number('10');
+    var primitiveBoolean1 = false;
+    var primitiveBoolean2 = Boolean('false');
+
+    console.log(typeof primitiveString1,typeof primitiveString2);
+    console.log(typeof primitiveNumber1,typeof primitiveNumber2);
+    console.log(typeof primitiveBoolean1,typeof primitiveBoolean2);
+
+    var myNumber = new Number(23);
+    var myString = new String('남성');
+    var myBoolean = new Boolean(false);
+    var myObject = new Object();
+    var myArray = new Array('foo','bar');
+    var myFunction = new Function("x","y","return x*y");
+    var myDate = new Date();
+    var myRegExp = new RegExp('\bt[a-z]+\b');
+    var myError = new Error('Crap!');
+
+console.log(
+    typeof myNumber,
+    typeof myString,
+    typeof myBoolean,
+    typeof myObject,
+    typeof myArray,
+    typeof myFunction,
+    typeof myDate,
+    typeof myRegExp,
+    typeof myError);
+
+  </script>
+</body>
+</html>

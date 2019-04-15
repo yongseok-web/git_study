@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>생성자 인스턴스에는 자신의 생성자 함수를 가리키는 속성이 있다(1)</title>
+</head>
+<body>
+  <script>
+    var foo = {};
+    console.log(foo.constructor === Object);
+    console.log(foo.constructor);
+  </script>
+</body>
+</html>
