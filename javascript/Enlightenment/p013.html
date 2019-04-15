@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>사용자 정의 생성자 함수</title>
+</head>
+<body>
+  <script>
+    var Person = function(living, age, gender) {
+      this.living = living;
+      this.age = age;
+      this.gender = gender;
+      this.getGender = function() {
+      return this.gender;
+      }
+    }
+
+    var 용석 = new Person(true, 27, '남성');
+    console.log(용석);
+
+    var 림 = new Person(true, 28, '여성');
+    console.log(림);
+
+
+  </script>
+</body>
+</html>
