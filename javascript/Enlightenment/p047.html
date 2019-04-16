@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>점표기법과 각괄호표기법을 사용한 객체 속성 접근(1)</title>
+</head>
+<body>
+  <script>
+    var 용석 = new Object();
+
+    용석.living = true;
+    용석.age = 27;
+    용석.gender = 'male';
+    용석.getgender = function () {return 용석.gender;};
+
+    console.log(
+      용석.living,
+      용석.age,
+      용석.gender,
+      용석.getgender()
+    );
+
+    용석.living = false;
+    용석.age = 99;
+    용석.gender = 'fmale';
+    용석.getgender = function () {return 'Gender = '+ 용석.gender;};
+
+    console.log(용석);
+
+  </script>
+  점 표기법은 객체의 속성을 얻거나 설정하거나 갱신할 떄 사용할 수 있는 표기법 중 가장 널리 사용되는 표기법
+</body>
+</html>

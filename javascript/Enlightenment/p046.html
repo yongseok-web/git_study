@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>복합객체에 다른 객체 포함하기(2)</title>
+</head>
+<body>
+  <script>
+  var myArray = [[[]]];
+
+  var myFunction = function() {
+    var myFunction = function() {
+      var myFunction = function() {
+
+      };
+    };
+  };
+
+  var foo = [{
+    foo: [{
+      bar: {
+        say: function(){
+          return 'hi';
+        }
+      }
+    }]
+  }];
+
+  console.log(foo[0]);
+  console.log(foo[0].foo[0]);
+  console.log(foo[0].foo[0].bar);
+  console.log(foo[0].foo[0].bar.say());
+  </script>
+복합객체 중 일부는 다른 객체를 포함할 수 있다.
+</body>
+</html>

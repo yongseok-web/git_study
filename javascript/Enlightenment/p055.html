@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>hasOwnProperty를 사용해 프로토타입 체인에서 상속받는 속성인지 확인하기</title>
+<body>
+  <script>
+
+  var myObject = {foo:'value'};
+
+  console.log(myObject.hasOwnProperty('foo'));
+
+  console.log(myObject.hasOwnProperty('toString'));
+  console.log(myObject['toString']);
+
+
+  </script>
+hasOwnProperty매소드 해당 객체의 고유한 것인지 확인
+</body>
+</html>

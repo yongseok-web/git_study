@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>복합객체에 다른 객체 포함하기</title>
+</head>
+<body>
+  <script>
+  var Object1 = {
+    Object1_1:{
+      Object1_1_1:{foo: 'bar'},
+      Object1_1_2:{},
+  },
+    Object1_2:{
+      Object1_2_1:{},
+      Object1_2_2:{},
+  }
+};
+console.log(Object1.Object1_1.Object1_1_1.foo);
+console.log(Object1.Object1_1.Object1_1_1);
+console.log(Object1.Object1_1);
+console.log(Object1);
+  </script>
+Object(), Array(), Function() 객체는 다른 복합객체를 포함할 수 있다.
+</body>
+</html>

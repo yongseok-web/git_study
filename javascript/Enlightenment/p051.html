@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>객체속성 삭제하기</title>
+<body>
+  <script>
+
+  var foo = {bar:'bar'};
+
+  delete foo.bar;
+
+  console.log('bar' in foo);
+  console.log(foo);
+
+  </script>
+  delete 연산자는 프로토타입 체인에 있는 속성을 제거하지 않는다. 객체에서 속성을 제거할 수 있는 유일한 방법이다.
+</body>
+</html>

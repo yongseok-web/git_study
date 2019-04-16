@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>복합객체는 자바스크립트 자료형의 대부분을 속성으로 포함할 수 있다</title>
+</head>
+<body>
+  <script>
+  var myObject = {};
+    myObject.myFunction = function() {};
+    myObject.myArray = [];
+    myObject.myString = 'string';
+    myObject.myNumber = 27;
+    myObject.myDate = new Date();
+    myObject.myRegExp = /a/;
+    myObject.myNull = null;
+    myObject.myUndefined = undefined;
+    myObject.myObject = {};
+    myObject.myMath_PI = Math.PI;
+    myObject.myError = new Error('Crap');
+
+console.log(myObject.myFunction, myObject.myArray, myObject.myString, myObject.myNumber, myObject.myDate, myObject.myRegExp, myObject.myNull, myObject.myUndefined, myObject.myObject, myObject.myMath_PI, myObject.myError);
+
+var myFunction = {};
+
+    myFunction.myFunction = function() {};
+    myFunction.myArray = [];
+    myFunction.myString = 'string';
+    myFunction.myNumber = 27;
+    myFunction.myDate = new Date();
+    myFunction.myRegExp = /a/;
+    myFunction.myNull = null;
+    myFunction.myUndefined = undefined;
+    myFunction.myObject = {};
+    myFunction.myMath_PI = Math.PI;
+    myFunction.myError = new Error('Crap');
+
+console.log(  myFunction.myFunction,myFunction.myArray,myFunction.myString,myFunction.myNumber,myFunction.myDate,myFunction.myRegExp,myFunction.myNull,myFunction.myUndefined,myFunction.myObject,myFunction.myMath_PI,myFunction.myError);
+  </script>
+  복합객체는 자바스크립트에서 표현할 수있는 모든 값을 포함하거나 참조할 수 있다. 임의의 속성과 속성값을 지정할 수 있다.
+</body>
+</html>
