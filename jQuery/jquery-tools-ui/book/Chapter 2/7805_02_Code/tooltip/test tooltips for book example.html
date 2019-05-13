@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<!-- include the Tools -->
+	<script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+
+	<!-- standalone page styling (can be removed) -->
+	<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/standalone.css"/>
+<style>
+
+body {
+	margin-top:100px;
+	margin-left: 200px;
+}
+
+#download_now img {
+	padding: 10px;
+	opacity: 0.8;
+}
+
+/* tooltip styling */
+.tooltip {
+	display:none;
+	background:url(black_big.png);
+	height:145px;
+	padding:35px 30px 10px 30px;
+	width:310px;
+	font-size:11px;
+	color:#fff;
+}
+
+/* a .label element inside tooltip */
+.tooltip .label {
+	color:#fff;
+	width:70px;
+	font-weight: bold;
+}
+
+.tooltip a {
+	color:#ad4;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.tooltip img {
+	float: left;
+	margin: 0px 5px 10px 0px;
+}
+
+.bookavail {
+	margin-top: -5px;
+	color: red;
+	font-weight: bold;
+	font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+
+
+<!-- trigger element. a regular workable link -->
+<a id="booktip"><img src="book.jpg"></a>
+
+<!-- tooltip element -->
+<div class="tooltip">
+
+	<img src="book.jpg" />
+
+	<p class="bookavail">Book and eBook available now</p>
+
+	<table>
+		<tr>
+			<td class="label">Book only price:</td>
+			<td>£25.19 save 10%</td>
+		</tr>
+		<tr>
+			<td class="label">eBook only price:</td>
+			<td>£16.14 save 15%</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><a href="#"><img src="buy-button.png"></a></td>
+		</tr>
+	</table>
+</div>
+
+<script>
+$(document).ready(function() {
+
+$("#booktip").tooltip({
+	effect: 'slide',
+	position: 'top right',
+	relative: true,
+
+
+	// change trigger opacity slowly to 1.0
+	onShow: function() {
+		this.getTrigger().fadeTo("slow", 1.0);
+	},
+
+	// change trigger opacity slowly to 0.8
+	onHide: function() {
+		this.getTrigger().fadeTo("slow", 0.8);
+	}
+	}).dynamic({ bottom: { direction: 'down', bounce: true } });
+});
+</script>
+</body>
+
+</html>

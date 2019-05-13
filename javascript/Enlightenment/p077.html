@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>함수에 매개변수 전달하기</title>
+<body>
+  <script>
+    var addFunction = function(Number1, Number2){
+      var sum = Number1 + Number2;
+      return sum;
+    }
+
+    console.log(addFunction(3,3));
+  </script>
+매개변수를 생략해도 아무런 문제가 없다. 전달하지 않은 인수에는 undefined 값이 저장된다.
+</body>
+</html>

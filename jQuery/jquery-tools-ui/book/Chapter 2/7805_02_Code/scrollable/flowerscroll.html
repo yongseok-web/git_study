@@ -1,0 +1,230 @@
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="http://cdn.jquerytools.org/1.2.6/all/jquery.tools.min.js"></script>
+
+	<style>
+	/* Scrollable */
+	#scrollable1 {
+		position:relative;
+		float:left;
+		width: 278px;
+		height:154px;
+		overflow:hidden;
+	}
+
+	.items {
+		position: absolute;
+		clear:both;
+		width: 20000em;
+	}
+
+	.item {
+		float:left;
+		width: 278px;
+		height: 154px;
+		background: #ccc;
+	}
+
+	#overscroll {
+		position:relative;
+		float: left;
+		width: 550px;
+		height: 50px;
+		border:1px solid #ccc;
+		overflow:hidden;
+	}
+
+	.item2 {
+		float:left;
+		width:550px;
+	}
+
+	.item2 div {
+		float:left;
+		width: 100px;
+		height: 40px;
+		margin: 5px;
+		background: #cccccc;
+	}
+
+	#swapframe {
+		height: 540px;
+		width: 640px;
+		padding-left: 20px;
+		padding-right: 25px;
+		padding-top: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		background-image: url('slideshow-bg.gif');
+		background-size: 680px 540px;
+		background-repeat:no-repeat;
+	}
+
+	#viewer {
+		height: 355px;
+		background: #000;
+	}
+
+	#scrollablecontainer {
+		position: relative;
+		top: -30px;
+		height: 52px;
+	}
+
+	#overscroll {
+		position:relative;
+		float: left;
+		width: 550px;
+		height: 50px;
+		border:1px solid #ccc;
+		overflow:hidden;
+	}
+
+	/* prev, next, up and down buttons */
+	a.browse {
+		background:url(hori_large.png) no-repeat;
+		display:block;
+		width:30px;
+		height:30px;
+		float:left;
+		margin:10px;
+		cursor:pointer;
+		font-size:1px;
+	}
+
+	/* right */
+	a.right { background-position: 0 -30px; clear:right; margin-right: 0px;}
+	a.right:hover { background-position:-30px -30px; }
+	a.right:active { background-position:-60px -30px; }
+
+
+	/* left */
+	a.left { margin-left: 0px; }
+	a.left:hover { background-position:-30px 0; }
+	a.left:active { background-position:-60px 0; }
+
+	/* disabled navigational button */
+	a.disabled {
+		visibility:hidden !important;
+	}
+
+	#caption {
+		position: relative;
+		top: -10px;
+		width: 200px;
+		margin: 0 auto;
+		color: #000;
+		text-align: center;
+		font-size: 30px;
+		font-family: 'Cedarville Cursive', cursive;
+		padding-bottom: 35px;
+	}
+
+	#nextgal {
+		position: relative;
+		width: 400px;
+		height: 20px;
+		margin: 0 auto;
+		color: #000;
+		text-align: center;
+	}
+
+	.loadingspin {
+		float: center;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	</style>
+
+
+</head>
+<body>
+<div id="swapframe">
+	<div id="viewer">
+		<div class="loadingspin"><img src="loadinfo.gif" alt="Loading..."></div>
+	</div>
+	<div id="caption">x</div>
+	<div id="scrollablecontainer">
+		<a class="prev browse left"></a>
+		<div id="overscroll">
+			<div class="items">
+				<div class="item2">
+					<div><a rel="odontoglossum" href="#"><img src="thumbnails/odontoglossum_tn.jpg" align="middle"></a></div>
+					<div><a rel="forest orchid" href="#"><img src="thumbnails/forest%2520orchid_tn.jpg" align="middle"></a></div>
+					<div><a rel="brassia" href="#"><img src="thumbnails/brassia_tn.jpg" align="middle"></a></div>
+					<div><a rel="paphiopedilum" href="#"><img src="thumbnails/paphiopedilum_tn.jpg" align="middle"></a></div>
+					<div><a rel="zygopetalum" href="#"><img src="thumbnails/zygopetalum_tn.jpg" align="middle"></a></div>
+				</div>
+				<div class="item2">
+					<div><a rel="cactus flower" href="#"><img src="thumbnails/cactus%2520flower_tn.jpg" align="middle"></a></div>
+					<div><a rel="african violet" href="#"><img src="thumbnails/african%2520violet_tn.jpg" align="middle"></a></div>
+					<div><a rel="pink camelia" href="#"><img src="thumbnails/pink%2520camelia_tn.jpg" align="middle"></a></div>
+					<div><a rel="red camelia" href="#"><img src="thumbnails/red%2520camelia_tn.jpg" align="middle"></a></div>
+					<div><a rel="white camelia" href="#"><img src="thumbnails/white%2520camelia_tn.jpg" align="middle"></a></div>
+				</div>
+   			</div>
+		</div>
+		<a class="next browse right"></a>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+	$.ajaxSetup({
+		cache: false,
+		dataType: "text html"
+	});
+
+	$(".loadingspin").bind('ajaxStart', function(){
+		$(this).show();
+		}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+
+	$.fn.loadimage = function(src, f){
+		return this.each(function(){
+			$("<img />").appendTo(this).each(function(){
+				this.src = src;
+				this.onload = f;
+			});
+		});
+	}
+
+	$(".item2 img:first").load(function(){
+		var firstpic = $(".item2 a:first").attr("rel");
+		$("#caption").text(firstpic);
+		$("#viewer").empty().loadimage("images/" + firstpic + ".jpg").hide().fadeIn('fast');
+	});
+
+	$(".item2 a").unbind('click.pic').bind('click.pic', function(e){
+		e.preventDefault();
+		var picindex = $(this).attr("rel");
+		$("#caption").text(picindex);
+		$("#viewer").empty().loadimage("images/" + picindex + ".jpg").hide().fadeIn('fast');
+	});
+
+	$("#overscroll").scrollable();
+
+	$("#nextgal").click(function(){
+		var state = $(this).attr('class');
+		if (state == 'first'){
+			$(this).removeClass().addClass('second');
+		}else{
+			$(this).removeClass().addClass('first');
+		}
+		$("#swapframe").load("ajax/" + state + ".html").hide().fadeIn('fast');
+	});
+
+	$('.item2').children().hover(function() {
+	$(this).siblings().stop().fadeTo(500,0.5);
+	}, function() {
+	$(this).siblings().stop().fadeTo(500,1);
+	});
+});
+</script>
+</body>
+</html>

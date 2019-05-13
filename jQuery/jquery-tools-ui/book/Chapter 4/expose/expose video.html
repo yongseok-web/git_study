@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<!-- include the Tools -->
+	<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+
+	<script src="flowplayer-3.2.6.min.js"></script>
+
+	<style>
+	body { padding:50px 80px; font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana; }
+
+	/* get rid of those system borders being generated for A tags */
+	a:active { outline:none; }
+
+	:focus { -moz-outline-style:none; }
+
+	.overlay { background:url(white.png) no-repeat; padding:40px; width:576px; display:none; }
+
+	.close {
+		background:url(close.png) no-repeat;
+		position:absolute;
+		top:2px;
+		display:block;
+		right:5px;
+		width:35px;
+		height:35px;
+		cursor:pointer;
+	}
+
+	a.player {
+		display:block;
+		height:450px;
+	}
+	</style>
+
+	<script>
+	$(function() {
+
+		// setup overlay actions to buttons
+		$("button[rel]").overlay({
+
+			// use the Apple effect for overlay
+			effect: 'apple',
+
+			expose: '#789',
+
+			onLoad: function(content) {
+				// find the player contained inside this overlay and load it
+				this.getOverlay().find("a.player").flowplayer(0).load();
+			},
+
+			onClose: function(content) {
+				$f().unload();
+			}
+		});
+
+		// install flowplayers
+		$("a.player").flowplayer("http://releases.flowplayer.org/swf/flowplayer-3.2.7.swf");
+	});
+	</script>
+</head>
+<body>
+
+<h2>Multiple overlay demo</h2>
+
+<p>This page shows two overlays with two different videos. Look for source code how player loading and unloading is achieved. Both overlays uses expose tool to achieve the darkening of the surroundings.</p>
+<p>
+	<button rel="#overlay1">Video 1</button>
+	<button rel="#overlay2">Video 2</button>
+</p>
+
+<!-- overlays for both videos -->
+<div class="overlay" id="overlay1">
+	<a class="player" href="http://pseudo01.hddn.com/vod/demo.flowplayervod/flowplayer-700.flv">
+		&nbsp;
+	</a>
+</div>
+
+<div class="overlay" id="overlay2">
+	<a class="player" href="http://pseudo01.hddn.com/vod/demo.flowplayervod/flowplayer-700.flv">
+		&nbsp;
+	</a>
+</div>
+</body>
+</html>

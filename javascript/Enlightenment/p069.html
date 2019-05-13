@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>모든 객체는 Object.prototype을 상속받는다</title>
+<body>
+  <script>
+  Object.prototype.foo = 'foo';
+
+  var myString = 'bar';
+
+  console.log(myString.foo);
+  console.log(myString);
+
+  </script>
+</body>
+</html>

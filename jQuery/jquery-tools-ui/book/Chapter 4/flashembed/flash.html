@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<!-- include the Tools -->
+	<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+
+	<style>
+	body { padding:50px 80px; font-family:"Lucida Grande","bitstream vera sans","trebuchet ms",sans-serif,verdana; }
+
+	/* get rid of those system borders being generated for A tags */
+	a:active { outline:none; }
+
+	:focus { -moz-outline-style:none; }
+
+	#flash2 { width:787px; height:300px; background-image:url(splash.jpg); text-align:center; cursor:pointer; }
+
+	#flash2 img { margin-top:110px; }
+	</style>
+</head>
+<body>
+
+<script>
+
+// use the jQuery alternative for flashembed.domReady
+$(function() {
+
+	// bind an onClick event for this second Flash container
+	$("#flash2").click(function() {
+
+		// same as in previous example
+		$(this).flashembed("http://static.flowplayer.org/swf/flash10.swf");
+	});
+});
+</script>
+
+<div id="flash2">
+	<img src="play_text_large.png" alt="" />
+</div>
+</body>
+</html>
+

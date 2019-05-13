@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>Function() 매개변수</title>
+<body>
+  <script>
+    var addFunction = new Function('num1','num2','return num1 + num2');
+    var timesFunction = new Function('num1,num2','return num1 * num2');
+    console.log(addFunction(2,2),timesFunction(2,2));
+  </script>
+  마지막 매개면수는 항상 함수의 몸체를 구성할 코드를 나타내는 문자열이다.
+  여러 매개변수를 전달할 때는 매개변수 사이를 쉼표로 구분해야한다.
+</body>
+</html>

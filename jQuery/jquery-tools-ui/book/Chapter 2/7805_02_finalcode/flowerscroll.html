@@ -1,0 +1,120 @@
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+	<style>
+	#swapframe { height: 540px; width: 640px; padding: 25px 25px 0 20px; margin: 0 auto;
+		background: transparent url(slideshow-bg.gif) no-repeat; background-size: 680px 540px;}
+
+	#viewer { height: 355px; background: #000; }
+
+	.loadingspin { float: center; margin-top: auto; margin-bottom: auto; }
+
+	#caption { position: relative; top: -10px; width: 200px; margin: 0 auto; color: #000; text-align: center; font-size: 30px;
+		font-family: 'Cedarville Cursive', cursive; padding-bottom: 35px; }
+
+	#scrollablecontainer { position: relative; top: -30px; height: 52px; }
+
+	/* prev, next, up and down buttons */
+	a.browse { background:url(hori_large.png) no-repeat; display:block; float: left; width:30px; height:30px; float:left; margin:10px;
+		cursor:pointer; font-size:1px; }
+
+	/* right */
+	a.right { background-position: 0 -30px; clear:right; margin-right: 0px;}
+	a.right:hover { background-position:-30px -30px; }
+	a.right:active { background-position:-60px -30px; }
+
+
+	/* left */
+	a.left { margin-left: 0px; }
+	a.left:hover { background-position:-30px 0; }
+	a.left:active { background-position:-60px 0; }
+
+	/* disabled navigational button */
+	a.disabled { visibility:hidden !important; }
+
+	#overscroll { position:relative; float: left; width: 550px; height: 50px; border:1px solid #ccc; overflow:hidden; }
+
+	.items { position: absolute; clear:both; width: 20000em; }
+
+	.item { float:left; width:550px; }
+
+	.item div { float:left; width: 100px; height: 40px; margin: 5px; background: #ccc; }
+
+	</style>
+
+
+</head>
+<body>
+<div id="swapframe">
+	<div id="caption">x</div>
+	<div id="scrollablecontainer">
+		<a class="prev browse left"></a>
+		<div id="overscroll">
+			<div class="items">
+				<div class="item">
+					<div><a rel="odontoglossum" href="images/odontoglossum.jpg"><img src="thumbnails/odontoglossum_tn.jpg" align="middle"></a></div>
+					<div><a rel="forest orchid" href="images/forest%2520orchid.jpg"><img src="thumbnails/forest%2520orchid_tn.jpg" align="middle"></a></div>
+					<div><a rel="brassia" href="images/brassia.jpg"><img src="thumbnails/brassia_tn.jpg" align="middle"></a></div>
+					<div><a rel="paphiopedilum" href="images/paphiopedilum.jpg"><img src="thumbnails/paphiopedilum_tn.jpg" align="middle"></a></div>
+					<div><a rel="zygopetalum" href="images/zygopetalum.jpg"><img src="thumbnails/zygopetalum_tn.jpg" align="middle"></a></div>
+				</div>
+
+   			</div>
+		</div>
+		<a class="next browse right"></a>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+$(function(){
+	$.ajaxSetup({
+		cache: false,
+		dataType: "text html"
+	});
+
+	$(".loadingspin").bind('ajaxStart', function(){
+		$(this).show();
+		}).bind('ajaxComplete', function(){
+		$(this).hide();
+	});
+
+	$.fn.loadimage = function(src, f){
+		return this.each(function(){
+			$("<img />").attr("src", src).appendTo(this).each(function(){
+				this.onload = f;
+			});
+		});
+	}
+
+	$(".item img:first").load(function(){
+		var firstpic = $(".item a:first").attr("rel");
+		$("#caption").text(firstpic);
+		$("#viewer").empty().loadimage("images/" + firstpic + ".jpg").hide().fadeIn('fast');
+	});
+
+	$(".item a").unbind('click.pic').bind('click.pic', function(e){
+		e.preventDefault();
+		var picindex = $(this).attr("rel");
+		$("#caption").text(picindex);
+		$("#viewer").empty().loadimage("images/" + picindex + ".jpg").hide().fadeIn('fast');
+	});
+
+	$("#overscroll").scrollable();
+
+	$("a.browse").click(function(){
+		$("#swapframe").load("ajax/" + state + ".html").hide().fadeIn('fast');
+	});
+
+	$('.item').children().hover(function() {
+		$(this).siblings().stop().fadeTo(500,0.5);
+	}, function() {
+		$(this).siblings().stop().fadeTo(500,1);
+	});
+});
+</script>
+</body>
+</html>

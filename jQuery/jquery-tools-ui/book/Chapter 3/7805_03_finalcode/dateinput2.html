@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<!-- include the Tools -->
+	<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+
+	<!-- standalone page styling (can be removed) -->
+	<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/standalone.css"/>
+
+	<!--<link rel="stylesheet" type="text/css" href="css/start.css">-->
+
+	<link rel="stylesheet" type="text/css" href="css/skin1.css">
+
+	<style>
+	// body, a:active and : focus only needed for demo; these can be removed for production use
+	body { padding:50px 80px; }
+
+	a:active { outline:none; }
+
+	:focus { -moz-outline-style:none; }
+
+	.date {
+		width: 260px;
+	}
+
+	#calroot { 	width:210px; }
+
+	#calhead {
+		background: url("images/ui-bg_gloss-wave_75_2191c0_500x100.png") repeat-x scroll 50% 50% #2191C0;
+		border: 1px solid #4297D7;
+		color: #EAF5F7;
+		font-weight: bold;
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+
+	}
+
+	#caltitle {
+		font-size: 14px;
+		float: left;
+		text-align: center;
+		width: 155px;
+		line-height: 20px;
+		color: #EAF5F7;
+		font-weight: bold;
+	}
+
+	#calnext, #calprev {
+		display: block;
+		width: 16px;
+		height: 20px;
+		float: left;
+		cursor: pointer;
+		margin-top: 2px;
+	}
+
+	#calnext {
+		background: transparent url("images/ui-icons_056b93_256x240.png") no-repeat scroll center center;
+		background-position: -48px -192px;
+		float: right;
+		margin-right: 4px;
+	}
+
+	#calprev {
+		background: transparent url("images/ui-icons_056b93_256x240.png") no-repeat scroll center center;
+		background-position: -78px -192px;
+		margin-left: 4px;
+	}
+
+	#caldays {
+		margin-top: 3px;
+	}
+
+	#caldays span {
+		display: block;
+		float: left;
+		width: 30px;
+		text-align: center;
+	}
+
+	/* single day */
+	.calweek a {
+		background: url("images/ui-bg_gloss-wave_75_2191c0_500x100.png") repeat-x scroll 50% 50% #0078AE;
+		border: 1px solid #77D5F7;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		color: #FFFFFF;
+		display: block;
+		float: left;
+		font-size: 11px;
+		font-weight: normal;
+		height: 18px;
+		line-height: 20px;
+		margin-left: 2px;
+		outline: medium none;
+		text-align: center;
+		text-decoration: none;
+		width: 26px;
+	}
+
+	/* current day */
+	#calcurrent, #caltoday {
+		background: url("images/ui-bg_gloss-wave_50_6eac2c_500x100.png") repeat-x scroll 50% 50% #6EAC2C;
+		border: 1px solid #ACDD4A;
+		color: #FFF;
+		font-weight: normal;
+		outline: medium none;
+		z-index:9999;
+	}
+
+	/* today */
+	#caltoday {
+		background: url("images/ui-bg_gloss-wave_45_e14f1c_500x100.png") repeat-x scroll 50% 50% #6EAC2C;
+		border: 1px solid #ACDD4A;
+		color: #000;
+	}
+	</style>
+</head>
+
+<body>
+
+
+	<!-- HTML5 date input -->
+	<input type="date" name="mydate" data-value: "Today" />
+
+	<!-- make it happen -->
+
+	<script>
+	// the french localization
+	$.tools.dateinput.localize("fr",  {
+		months:        'janvier,f&eacute;vrier,mars,avril,mai,juin,juillet,ao&ucirc;t,' +
+					   'septembre,octobre,novembre,d&eacute;cembre',
+		shortMonths:   'jan,f&eacute;v,mar,avr,mai,jun,jul,ao&ucirc;,sep,oct,nov,d&eacute;c',
+		days:          'dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi',
+		shortDays:     'dim,lun,mar,mer,jeu,ven,sam'
+	});
+
+	$(":date").dateinput({
+		format: 'dddd, ddth mmmm yyyy',
+		lang: 'fr',
+		offset: [0, 30],
+		yearRange: [-20, 20]
+	});
+	</script>
+
+</body>
+
+</html>

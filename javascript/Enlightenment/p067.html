@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>객체 리터럴을 사용한 Object() 객체생성</title>
+<body>
+  <script>
+
+  var 용석 = new Object();
+  용석.living = true;
+  용석.age = 27;
+  용석.gender = '남성';
+  용석.getGender = function() {return 용석.gender;};
+  console.log(용석);
+
+  var yong = {
+    living: true,
+    age: 27,
+    gender: '남성',
+    getGender: function() {return yong.gender;}
+  };
+  console.log(yong);
+
+  console.log(yong===용석);
+  console.log(yong.living===용석.living,yong.living,용석.living);
+  console.log(yong.age===용석.age,yong.ag,용석.age);
+  console.log(yong.gender===용석.gender,yong.gender,용석.gender);
+  console.log(yong.getGender===용석.getGender,yong.getGender,용석.getGender);
+
+  </script>
+  속성 이름이 (1)예약어인경우,(2)공백이나 특수문자를 포함, (3)숫자로 시작하는 경우 반드시 속성이름을 문자열로 설정한다.
+</body>
+</html>

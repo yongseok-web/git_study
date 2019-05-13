@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Tools standalone demo</title>
+	<link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+
+	<!-- include the Tools -->
+	<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+
+	<style type="text/css">
+
+	body {
+		padding-left:400px;
+		padding-top: 50px;
+	}
+
+	/* container for slides */
+	.images {
+		border:1px solid #ccc;
+		position:relative;
+		height:450px;
+
+		width:502px;
+		float:left;
+		margin:15px;
+		cursor:pointer;
+
+		/* CSS3 tweaks for modern browsers */
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		-moz-box-shadow:0 0 25px #666;
+		-webkit-box-shadow:0 0 25px #666;
+		box-shadow:0 0 25px #666;
+	}
+
+	/* single slide */
+	.images div {
+		display:none;
+		position:absolute;
+		top:0;
+		left:0;
+		margin:3px;
+		padding:15px 30px 15px 15px;
+		height:256px;
+		font-size:12px;
+	}
+
+	/* tabs (those little circles below slides) */
+	.slidetabs {
+		margin-left: 440px;
+		margin-right: 600px;
+		margin-top: 350px;
+		position: absolute;
+		width: 100px;
+	}
+
+	/* single tab */
+	.slidetabs a {
+		width:8px;
+		height:8px;
+		float:left;
+		margin:3px;
+		background:url(navigator.png) 0 0 no-repeat;
+		display:block;
+		font-size:1px;
+		color: #fff;
+	}
+
+	/* mouseover state */
+	.slidetabs a:hover {
+		background-position:0 -8px;
+	}
+
+	/* active state (current page state) */
+	.slidetabs a.current {
+		background-position:0 -16px;
+	}
+
+	/* prev and next buttons */
+	.forward, .backward {
+		float:left;
+		margin-top:120px;
+		background:#fff url(nav.png) no-repeat;
+		width:35px;
+		height:35px;
+		cursor:pointer;
+		z-index: 2;
+	}
+
+	/* next */
+	.forward { background-position: -36px 0px ; }
+	.forward:hover { background-position:-36px -36px; }
+	.forward:active { background-position:-36px -36px; }
+
+
+	/* prev */
+	.backward:hover { background-position:0px -36px; }
+	.backward:active { background-position:0px -36px; }
+
+	/* disabled navigational button. is not needed when tabs are configured with rotate: true */
+	.disabled {
+		visibility:hidden !important;
+	}
+
+	#caption {
+		color: black;
+		margin-left: 35px;
+		margin-top: 345px;
+		position: absolute;
+		width: 200px;
+		font-family: 'Cedarville Cursive', cursive;
+		font-size: 26px;
+	}
+</style>
+
+<style>
+#galprevnext {
+	position: absolute;
+	width: 640px;
+	height: 539px;
+
+}
+
+.galleftpic, .galrightpic {
+	width: 270px;
+	height: 539px;
+	cursor: pointer;
+}
+
+.galleftpic {
+	float: left;
+}
+
+.galrightpic {
+	float: right;
+}
+
+.galprevpic, .galnextpic {
+	display: block;
+	position: absolute;
+	top: 140px;
+	width: 30px;
+	height: 30px;
+	margin: 0 10px;
+}
+
+.galprevpic {
+	float: left;
+	background: url(http://www.tribalmystic.com/test/CompleteNav/img/overlay/prevnext.png) 0 0 no-repeat;
+	margin-left: 9px;
+}
+
+.galnextpic {
+	float: right;
+	background: url(http://www.tribalmystic.com/test/CompleteNav/img/overlay/prevnext.png) -30px 0 no-repeat;
+    margin-left: 100px;
+}
+
+.hideit {
+	visibility: hidden;
+	cursor: arrow;
+}
+
+.showit {
+	visibility: visible;
+	cursor: pointer;
+}
+
+#galprevnext a {
+	text-decoration: none;
+}
+
+#galprevnext a:hover {
+	color: #ff0000;
+}
+
+#galprevnext a.current {
+	color: #0000ff;
+}
+
+#galprevnext .disabled {
+	visibility: hidden;
+}
+.galleft {
+    height: 310px;
+    margin-left: 35px;
+    margin-top: 35px;
+    position: absolute;
+    width: 150px;
+}
+
+.galright {
+    height: 310px;
+    margin-left: 360px;
+    margin-top: 35px;
+    position: absolute;
+    width: 150px;
+}
+#playcontrols {
+    clear: both;
+    margin-left: 375px;
+    margin-top: 350px;
+    padding-right: 40px;
+    position: absolute;
+}
+</style>
+
+
+</head>
+
+<body>
+<div id="caption"></div>
+
+
+
+		<!-- container for the slides -->
+		<div class="images">
+				<div><img src="images/odontoglossum.jpg" rel="odontoglossum" style="border-width:0; height:310px; width:466px;"></div>
+				<div><img src="images/forest orchid.jpg" rel="forest orchid" style="border-width:0; height:310px; width:466px;"></div>
+				<div><img src="images/brassia.jpg" rel="brassia" style="border-width:0; height:310px; width:466px;"></div>
+				<div><img src="images/paphiopedilum.jpg" rel="paphiopedilum" style="border-width:0; height:310px; width:466px;"></div>
+		</div>
+
+<div id="galprevnext">
+	<div class="galleft">
+		<a class="galprevpic hideit"></a>
+	</div>
+
+
+	<div class="galright">
+		<a class="galnextpic hideit"></a>
+	</div>
+</div>
+
+
+<!-- the tabs -->
+<div class="slidetabs">
+	<a href="#">1</a>
+	<a href="#">2</a>
+	<a href="#">3</a>
+	<a href="#">4</a>
+</div>
+
+<div id="playcontrols">
+	<a href="#" onClick='$(".slidetabs").data("slideshow").play();'><img src="play.gif"></a>
+	<a href="#" onClick='$(".slidetabs").data("slideshow").stop();'><img src="stop.gif"></a>
+</div>
+
+<script language="JavaScript">
+$(function() {
+
+$(".slidetabs").tabs(".images > div", {
+
+	// enable "cross-fading" effect
+	effect: 'fade',
+	fadeOutSpeed: "slow",
+
+	// start from the beginning after the last tab
+	rotate: true,
+
+
+	// here is a callback function that is called before the tab is clicked
+	onClick: function(event, tabIndex) {
+     	var str = $("img").eq(tabIndex).attr("rel");
+     	$("#caption").html(str);
+	}
+
+	// use the slideshow plugin. It accepts its own configuration
+	}).slideshow({
+		prev: ".galleft",
+		next: ".galright"
+	});
+});
+
+$(".galleft").mouseover(function(){
+	$(".galprevpic").removeClass('hideit').addClass('showit');
+ }).mouseout(function(){
+	$(".galprevpic").removeClass('showit').addClass('hideit');
+});
+
+$(".galright").mouseover(function(){
+	$(".galnextpic").removeClass('hideit').addClass('showit');
+}).mouseout(function(){
+	$(".galnextpic").removeClass('showit').addClass('hideit');
+});
+</script>
+</body>
+</html>

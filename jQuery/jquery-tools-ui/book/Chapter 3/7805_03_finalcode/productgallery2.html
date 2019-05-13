@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<!-- include the Tools -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<!--<script src="https://raw.github.com/jquerytools/jquerytools/master/src/rangeinput/rangeinput.js"></script>-->
+	<script src="http://cdn.jquerytools.org/1.2.6/form/jquery.tools.min.js"></script>
+
+	<style>
+	// body, a:active and : focus only needed for demo; these can be removed for production use
+	body { padding:50px 80px; }
+
+	a:active { outline:none; }
+
+	:focus { -moz-outline-style:none; }
+
+	#wrap {
+		background:url("images/productbrowser.jpg") no-repeat scroll 0 0 transparent;
+	}
+
+	/* outermost element for the scroller (stays still) */
+	#scrollwrap {
+		position:relative;
+		overflow:hidden;
+		width: 620px;
+		height:150px;
+		margin-bottom:15px;
+		-moz-box-shadow:0 0 20px #666;
+		-webkit-box-shadow:0 0 20px #666;
+		border-radius: 4px 4px 0 0;
+	}
+
+	/* the element that moves forward/backward */
+	#scroll {
+		position:relative;
+		width:20000em;
+		overflow: hidden;
+		padding: 20px 100px;
+		height: 160px;
+		color: #fff;
+		text-shadow: 5px 1px 1px #000;
+		left: -100px;
+	}
+
+	#scroll span {
+		font-weight:bold;
+		font-family: sans-serif;
+		font-size: 12px;
+		float: left;
+    	padding-right: 72px;
+    	width: 30px;
+	}
+
+	.slider {
+		background: transparent url("images/bkgrdhandle.png") no-repeat scroll 0 0 transparent;
+		position: relative;
+		cursor: pointer;
+		height: 17px;
+		width: 580px;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px
+    	margin-top: -10px;
+    	padding: 3px;
+    	margin-left: 16px;
+    	background-size: 581px auto;
+	}
+
+	.handle {
+		-moz-border-radius: 14px;
+		-webkit-border-radius: 14px;
+		border-radius: 14px;
+		cursor: move;
+		display: block;
+		height: 18px;
+		position: absolute;
+		top: 0;
+		width: 181px;
+		background: url("images/scroller.png") no-repeat scroll 0 0 transparent;
+	}
+
+	.handle:active {
+		background-color: #00f;
+	}
+
+	.range {
+		display:none;
+	}
+
+	#scroll ul {
+	    list-style: none outside none;
+	    margin: 0;
+	    padding: 0;
+	    position: absolute;
+	    white-space: nowrap;
+	    left: 40px;
+	}
+
+	#scroll ul li {
+	    display: inline;
+	    width: 80px;
+	}
+
+	#scroll ul li img {
+	    padding-right: 20px;
+	}
+
+
+	</style>
+
+</head>
+
+<body>
+
+<div id="wrap">
+
+<!-- our scrollable element -->
+<div id="scrollwrap">
+	<div id="scroll">
+		<ul>
+			 <li><img src="books/4569.jpg" /><span>Test Book 1</span></li>
+			 <li><img src="books/6860.jpg" /><span>Test Book 2</span></li>
+			 <li><img src="books/4408.jpg" /><span>Test Book 3</span></li>
+			 <li><img src="books/6785.jpg" /><span>Test Book 4</span></li>
+			 <li><img src="books/2305.jpg" /><span>Test Book 5</span></li>
+			 <li><img src="books/1925.jpg" /><span>Test Book 6</span></li>
+			 <li><img src="books/1308.jpg" /><span>Test Book 7</span></li>
+			 <li><img src="books/5108.jpg" /><span>Test Book 8</span></li>
+			 <li><img src="books/6884.jpg" /><span>Test Book 9</span></li>
+			 <li><img src="books/4323.jpg" /><span>Test Book 10</span></li>
+			 <li><img src="books/4569.jpg" /><span>Test Book 11</span></li>
+			 <li><img src="books/6860.jpg" /><span>Test Book 12</span></li>
+			 <li><img src="books/4408.jpg" /><span>Test Book 13</span></li>
+			 <li><img src="books/6785.jpg" /><span>Test Book 14</span></li>
+			 <li><img src="books/2305.jpg" /><span>Test Book 15</span></li>
+			 <li><img src="books/1925.jpg" /><span>Test Book 16</span></li>
+			 <li><img src="books/1308.jpg" /><span>Test Book 17</span></li>
+			 <li><img src="books/5108.jpg" /><span>Test Book 18</span></li>
+			 <li><img src="books/6884.jpg" /><span>Test Book 19</span></li>
+			 <li><img src="books/4323.jpg" /><span>Test Book 20</span></li>
+			 <li><img src="books/4569.jpg" /><span>Test Book 21</span></li>
+			 <li><img src="books/6860.jpg" /><span>Test Book 22</span></li>
+			 <li><img src="books/4408.jpg" /><span>Test Book 23</span></li>
+			 <li><img src="books/6785.jpg" /><span>Test Book 24</span></li>
+			 <li><img src="books/2305.jpg" /><span>Test Book 25</span></li>
+			 <li><img src="books/1925.jpg" /><span>Test Book 26</span></li>
+			 <li><img src="books/1308.jpg" /><span>Test Book 27</span></li>
+			 <li><img src="books/5108.jpg" /><span>Test Book 28</span></li>
+			 <li><img src="books/6884.jpg" /><span>Test Book 29</span></li>
+			 <li><img src="books/4323.jpg" /><span>Test Book 30</span></li>
+    	</ul>
+	</div>
+
+</div>
+
+<!-- rangeinput that controls the scroll -->
+<input type="range" max="2600" step="10" />
+</div>
+
+<script>
+
+// get handle to the scrollable DIV
+var scroll = $("#scroll");
+
+// initialize rangeinput
+$(":range").rangeinput({
+
+	// slide the DIV along with the range using jQuery's css() method
+	onSlide: function(ev, step)  {
+		scroll.css({left: -step + "px"});
+	},
+
+	// display progressbar
+	progress: true,
+
+	// this is called when the slider is clicked. we animate the DIV
+	change: function(e, i) {
+		scroll.animate({left: -i}, "fast");
+	},
+
+	// disable drag handle animation when when slider is clicked
+	speed: 0
+});
+</script>
+</body>
+
+</html>

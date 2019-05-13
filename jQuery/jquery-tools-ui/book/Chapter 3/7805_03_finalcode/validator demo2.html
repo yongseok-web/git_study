@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>jQuery Tools standalone demo</title>
+
+	<!-- include the Tools -->
+	<script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+
+
+
+	<!-- standalone page styling (can be removed) -->
+	<link rel="stylesheet" type="text/css" href="http://static.flowplayer.org/tools/css/standalone.css"/>
+
+
+	<style>
+	/* body, a:active and : focus only needed for demo; these can be removed for production use */
+	body { padding: 50px 80px; }
+
+	a:active { outline: none; }
+
+	:focus { -moz-outline-style: none; }
+
+
+	/* form style */
+	#myform {
+		background: 0 0 #333;
+		padding: 15px 20px;
+		color: #eee;
+		width: 440px;
+		margin: 0 auto;
+		position: relative;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+	/* nested fieldset */
+	#myform fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* typography */
+	#myform h3 	{ color: #eee; margin-top:0px; }
+	#myform p 	{ font-size: 11px; }
+
+
+	/* input field */
+	#myform input {
+		border: 1px solid #444;
+		background-color: #666;
+		padding: 5px;
+		color: #ddd;
+		font-size: 12px;
+
+		/* CSS3 spicing */
+		text-shadow: 1px 1px 1px #000;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+	}
+
+	#myform input:focus 	{ color: #fff; background-color: #777; }
+	#myform input:active 	{ background-color: #888; }
+
+
+	/* button */
+	#myform button {
+		outline: 0;
+		border: 1px solid #666;
+	}
+
+	/* error message */
+	.error {
+		font-size: 11px;
+		color: #f00;
+		display: none;
+		position: relative;
+	}
+
+	.error p {
+		margin: 15px;
+		margin-left: 20px;
+		font-weight: bold;
+		background-color: #fff;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		padding: 2px;
+	}
+
+	/* field label */
+	label {
+		display:block;
+		font-size:11px;
+		color:#ccc;
+	}
+
+	#terms label {
+		float:left;
+	}
+
+	#terms input {
+		margin:0 5px;
+	}
+
+	.invalid {
+		-moz-box-shadow: 0 0 2px 2px #f00;
+		-webkit-box-shadow: 0 0 2px 2px #f00;
+		box-shadow: 0 0 2px 2px #f00;
+    }
+
+	.errorlabel {
+		display: none;
+		font-size: 14px;
+		font-weight: bold;
+		color: #f00;
+	}
+
+	.error img {
+		position: absolute;
+		margin: 15px 15px 15px 0;
+	}
+
+	.errorhilite {
+		border: 3px solid #f00;
+	}
+
+	input.valid {
+		background-image: url(images/accept.png);
+		background-position: right top;
+		background-repeat: no-repeat;
+	}
+
+	input.valid.invalid {
+		background-image: none;
+	}
+
+	.errorhilite {
+		border: 3px solid #f00;
+	}
+	</style>
+
+</head>
+
+<body>
+
+
+<form id="myform">
+   <fieldset>
+      <h3>Sample registration form</h3>
+
+	  <span class="errorlabel">Oops - it seems there are some errors! Please check and correct them.</span>
+
+      <p> Enter bad values and then press the submit button. </p>
+
+      <p>
+         <label>email *</label>
+         <input type="email" name="email" id="email" required="required" />
+      </p>
+      <p>
+         <label>website *</label>
+
+         <input type="url" name="url" required="required" />
+      </p>
+      <p>
+         <label>name *</label>
+         <input type="text" name="name" pattern="[a-zA-Z ]{5,}" maxlength="30" />
+      </p>
+      <p>
+         <label>time *</label>
+         <input type="time" name="time" required="required" data-message="Please enter a valid time"/>
+      </p>
+      <p>
+         <label>age</label>
+         <input type="number" name="age" size="4" min="5" max="50" />
+      </p>
+	  <p>
+		<label>password</label>
+		<input type="password" name="password" minlength="4" />
+	  </p>
+	  <p>
+		<label>password check</label>
+		<input type="password" name="check" data-equals="password" />
+	  </p>
+
+	  <p>
+		<label>filename *</label>
+		<input type="file" name="uploadfile" required="required" />
+	  </p>
+	  <p>
+	  <label>telephone *</label>
+	  <input type="phone" name="phone"
+	              data-message="Please enter a valid US telephone number."
+	              required="required"
+	              pattern="(?:1-?)?(d{3})[-.]?(d{3})[-.]?(d{4})"
+            />
+	  </p>
+	  <p>
+	     <label>Gender</label>
+	           <select value="" required="required" name="sex">
+	           	<option></option>
+	  		 	<option value="male">Male</option>
+	  		 	<option value="female">Female</option>
+		 </select>
+	  </p>
+	  <p>
+	  	 <label>Please select one of the following:</label>
+	     <input type="radio" name="id[10]" value="" class="optionrequired" required="required"/>Electronic<br>
+		 <input type="radio" name="id[10]" value="" class="optionrequired" required="required"/>Paper<br>
+	  </p>
+      <p id="terms">
+      	<label>I accept the terms</label>
+      	<input type="checkbox" required="required" />
+	  </p>
+      <button type="submit">Submit form</button>
+      <button type="reset" id="clearform">Reset</button>
+
+   </fieldset>
+
+</form>
+
+
+<script>
+$.tools.validator.fn("select", "Select a value", function(input, value) {
+	return (value == 'none') ? false : true;
+});
+
+$.tools.validator.fn(".optionrequired", function(input, value) {
+	return value.length >= 1 ? true : {
+		en: "Please make a selection"
+	};
+});
+
+// custom Validator for "time" input type
+$.tools.validator.fn("[type=time]", function(el, value) {
+	return /^(2[0-4]|[01]?\d):[0-6]\d$/.test(value) ? true : "Please provide a valid time, using military format";
+});
+
+
+// custom  alidator based on minimum required length
+$.tools.validator.fn("[minlength]", function(input, value) {
+	var min = input.attr("minlength");
+
+	if (isNaN(min)) {
+		return true; // not a valid minlength, so skip validation
+	} else {
+		return value.length >= min ? true : {
+			en: "Please provide at least " +min+ " character" + (min > 1 ? "s" : ""),
+			fi: "Kentän minimipituus on " +min+ " merkkiä"
+		};
+	}
+});
+
+
+// make a validator based on a required filetype
+$.tools.validator.fn("[type=file]", "Please choose a file with an allowed extensions", function(input, value) {
+	if($(":file").val() != ""){
+		return /\.jpg\png\gif\pdf\doc\txt)$/.test(value);
+	} else {
+		return true;
+	}
+});
+
+$("#myform").validator({
+	position: 'center right',
+	speed: 'slow',
+	offset: [0, 10],
+	errorClass: 'invalid',
+	errorInputEvent: 'keyup change',
+	message: '<div><img src=images/exclamation.png></div>'
+
+});
+
+
+// get handle to the Validator API
+var myForm = $("#myform"),
+    api = myForm.data("validator");
+
+api.reflow();
+
+myForm.bind("onFail", function(e, errors)  {
+	// we are only doing stuff when the form is submitted
+	if (e.originalEvent.type == 'submit') {
+		$(".errorlabel").css({ display: 'block'});
+
+		// loop through Error objects and add the border color
+		$.each(errors, function()  {
+			var input = this.input;
+			input.addClass( 'errorhitlite' ).focus(function()  {
+				input.removeClass( 'errorhilite' );
+			});
+		});
+	}
+});
+
+// use API to assign an event listener
+api.onSuccess(function(e, els) {
+	$("input[required]").addClass('valid');
+
+	// we don't want to submit the form. just show events.
+	return false;
+});
+
+$("#clearform").click(function() {
+	$('#myform').data('validator').reset();
+	$(".errorlabel").css({ display: 'none' });
+
+	// loop through Error objects and add the border color
+	$("input, select").each(function(index) {
+	    $(this).css({ border: '1px solid #444' });
+	});
+
+	$('input').removeClass("valid");
+});
+
+</script>
+</body>
+
+</html>

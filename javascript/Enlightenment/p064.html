@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<title>Object() 매개변수</title>
+<body>
+  <script>
+
+  var yong1 = new Object();
+  var yong2 = new Object(undefined);
+  var yong3 = new Object(null);
+console.log(typeof yong1, typeof yong2, typeof yong3);
+
+console.log(new Object('foo'));
+console.log(new Object(1));
+console.log(new Object([]));
+console.log(new Object(function() {}));
+console.log(new Object(true));
+console.log(new Object(/\bt[a-z]+\b/));
+
+
+  </script>
+  매개변수가 없으면, undefined 나 null 값을 전달했다고 가정함.
+</body>
+</html>

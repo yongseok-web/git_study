@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head>
+	<title>jQuery Tools Tabs, Tooltips and Scrollable</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://themeforest.s3.amazonaws.com/89_codaSlider/example/jquery.tools.min.js"></script>-->
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://raw.github.com/jquerytools/jquerytools/dev/src/tabs/tabs.js"></script>
+	<script type="text/javascript" src="https://raw.github.com/jquerytools/jquerytools/dev/src/tabs/tabs.slideshow.js"></script>
+
+
+
+	<style type="text/css">
+	/* ===== Scrollable CSS ===== */
+	/* Primary Container */
+	div.scrollable { position: relative; width: 500px; height: 340px; overflow: hidden; background: url("slideshow-bg.gif"); float; left; }
+
+	/* Items Container */
+	div.scrollable div.items { width: 200em; position: absolute; clear: both; }
+
+	/* Individual Item Containers */
+	div.scrollable div.items div { float: left; width: 498px; height: 335px; padding: 15px 15px; }
+
+	div.borderimg {	background: url("slideshow-bg.gif") no-repeat; width: 510px; float: left; }
+
+	/* Navigation Container */
+	ul.navi { padding-left: 20px; background-color: #000; margin-left: 50px;  position: relative; margin-top: -45px; z-index= 100;
+		line-height: 30px; width: 446px; margin-left: 15px; font-family:Arial,Helvetica,sans-serif; opacity: 0.7; }
+
+	/* Navigation Links */
+	ul.navi a { margin-left: 2px; padding:2px 5px 1px; color: #999; text-decoration: none;	font-size: 11px; }
+	ul.navi a.active { font-weight: bold; background-color:#FFFFFF;}
+	ul.navi a:hover, div.navi a.active { color: #454545; }
+
+</style>
+
+
+	<script type="text/javascript">
+		$(function() {
+			$("div.scrollable").scrollable({size: 1});
+
+		});
+	</script>
+</head>
+
+
+<body>
+		<div class="borderimg">
+		<!-- BEGIN SCROLLABLE -->
+
+
+		<!-- Scrolling Panels -->
+		<div class="scrollable">
+			<div class="items">
+				<div><img src="http://www.tescorealfood.com/Media/images/Bean%20Ratatouille%20with%20Pork%20%20hero-34f3201e-25a7-408a-a96b-affe502e5622-0-472x310.jpg" style="border-width:0; height:310px; width:466px;"></div>
+				<div><img src="http://www.tescorealfood.com/Media/images/Rocky-road-hero-9dcce546-a801-4f5b-a97e-862d06bd3140-0-472x310.gif" style="border-width:0; height:310px; width:466px;"></div>
+				<div><img src="http://www.tescorealfood.com/Media/images/Hazel-crust-trout-hero-8274eaeb-b001-4587-b770-6920eb176d01-0-472x310.gif" style="border-width:0; height:310px; width:466px;"></div>
+				<div><img src="http://www.tescorealfood.com/Media/images/Chicken%20&%20BlackBean%20with%20Egg%20Fried%20Rice%20and%20spring%20roll%20hero-ebc920a2-db8e-42a8-a557-ef308d0ae256-0-472x310.jpg" style="border-width:0; height:310px; width:466px;"></div>
+			</div><!-- end div .items -->
+
+
+		</div><!-- end div .scrollable -->
+		<ul class="navi"></ul>
+		</div>
+
+
+
+
+	<!-- END SCROLLABLE -->
+
+
+</body>
+</html>
